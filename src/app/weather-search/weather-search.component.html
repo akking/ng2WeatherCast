@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <h1>Weather Forecast <small>Final project for CSC436</small></h1>
+      <br>
+      <p>Implemented using:</p>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <a class="attribution-two-line" href="https://angular.io/"><img
+          src="https://angular.io/resources/images/logos/angular2/angular_solidBlack.png" style="height: 3rem;"></a>
+        <a class="attribution-two-line" href="http://reactivex.io/rxjs/"><img
+          src="http://reactivex.io/rxjs/manual/asset/Rx_Logo_S.png" style="height: 3rem;"></a>
+        <a class="attribution-two-line" href="https://darksky.net/poweredby/"><img
+          src="https://darksky.net/dev/img/attribution/poweredby.png" style="height: 3rem;"></a>
+      </div>
+      <div class="col-xs-6">
+        <app-search-bar (submittedQuery)="searchForQuery($event)" [qq]="submittedQuery"></app-search-bar>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <app-search-result [result]="result"></app-search-result>
+</div>
+
+

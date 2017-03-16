@@ -1,0 +1,13 @@
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Weather for..." [formControl]="searchInput">
+  <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="submitQuery(searchInput.value)">Search</button>
+    </span>
+</div>
+<div>
+  <ul class="list-group" *ngIf="queryCandidates.length > 0 && queryCandidates[0] != searchInput.value">
+    <li class="list-group-item" *ngFor="let candidate of queryCandidates">
+      <a (click)="selectCandidate(candidate)">{{candidate}}</a>
+    </li>
+  </ul>
+</div>
