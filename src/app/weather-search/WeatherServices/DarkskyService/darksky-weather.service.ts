@@ -6,6 +6,7 @@ import { WeatherForecastResult } from '../WeatherForecastResult.model';
 
 @Injectable()
 export class DarkSkyWeatherService {
+  private preFix : string = 'https://cors-anywhere.herokuapp.com/';
   private apiURL: string = 'https://api.darksky.net/forecast/';
   private apiKey: string = '094074daea10ffa7fee7f9b835eb7b35';
 
@@ -15,7 +16,7 @@ export class DarkSkyWeatherService {
 
   forecastRequest(latitude: string, longitude: string): Observable<WeatherForecastResult> {
     let parameters = DarkSkyWeatherService.buildQuery(latitude, longitude, "");
-    let requestURL = this.apiURL + this.apiKey + "/" + parameters;
+    let requestURL = this.preFix + this.apiURL + this.apiKey + "/" + parameters;
     console.log("Request url: ", requestURL);
     return this.http.get(requestURL)
       .map((res: any) => new WeatherForecastResult(res.json()));
