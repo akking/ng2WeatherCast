@@ -37,7 +37,7 @@ export class WeatherForecastResult {
     return [forecast, labels];
   }
 
-  static DAYS: string[] = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  static DAYS: string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   static convertTimeToDay(s: string) {
     return WeatherForecastResult.DAYS[new Date(parseInt(s) * 1000).getDay()];
   }
